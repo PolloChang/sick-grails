@@ -75,6 +75,10 @@ dependencies {
     testImplementation "org.seleniumhq.selenium:selenium-support:4.0.0"
     testRuntimeOnly "org.seleniumhq.selenium:selenium-chrome-driver:4.0.0"
     testRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:4.0.0"
+
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.3'
+
 }
 
 bootRun {
