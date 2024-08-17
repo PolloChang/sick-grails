@@ -16,6 +16,7 @@
 <header>
     <a href="${createLink(controller: 'start' , action: 'index')}">Home</a>
     <a href="${createLink(controller: 'start' , action: 'filter')}">filter</a>
+    <a href="${createLink(controller: 'start' , action: 'filter2')}">filter2</a>
 </header>
 <main>
 <h1>這是一個有漏洞的 Grails 試驗程式</h1>

@@ -12,6 +12,12 @@ class StartController {
         render view: "/start/filter", model: [rows: result.rows]
     }
 
+    def filter2(){
+        LinkedHashMap result = ex100Service.filter2(params)
+
+        render view: "/start/filter2", model: [rows: result.rows]
+    }
+
     /**
      * 新增資料
      */

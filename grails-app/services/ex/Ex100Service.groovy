@@ -13,9 +13,38 @@ class Ex100Service implements DataBinder {
 
     MessageSource messageSource
 
-    LinkedHashMap filter(GrailsParameterMap params){
+    LinkedHashMap filter2(GrailsParameterMap params){
 
         println params
+
+        LinkedHashMap result = [:]
+
+
+        List<Ex100> ex100L = Ex100.createCriteria().list() {
+
+            if(params?.strings){
+                sqlRestriction(" this_.strings = '${params?.strings}' ")
+            }
+
+        }
+
+
+        result.rows = ex100L.collect { it ->
+            [
+
+                    id          : it?.id,
+                    strings     : it?.strings,
+                    integers    : it?.integers,
+                    atms        : it?.atms,
+                    status      : it?.status,
+            ]
+        }
+
+        return result
+
+    }
+
+    LinkedHashMap filter(GrailsParameterMap params){
 
         LinkedHashMap result = [:]
 
@@ -31,7 +60,7 @@ class Ex100Service implements DataBinder {
             dtSEL << "${it}2"
         }
 
-        def ex100L = Ex100.createCriteria().list() {
+        List<Ex100> ex100L = Ex100.createCriteria().list() {
 
             strL.each {
                 if(params?."${it}"){
