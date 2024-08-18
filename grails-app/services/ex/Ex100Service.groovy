@@ -13,6 +13,33 @@ class Ex100Service implements DataBinder {
 
     MessageSource messageSource
 
+    LinkedHashMap filter3(GrailsParameterMap params){
+
+        LinkedHashMap resultL = [:]
+
+        String dir = params?.dir
+
+        Runtime rt = Runtime.getRuntime();
+        Process proc = rt.exec(new String[] {"sh", "-c", "ls " + dir});
+        int result = proc.waitFor();
+        if (result != 0) {
+            System.out.println("process error: " + result);
+        }
+        InputStream ins = (result == 0) ? proc.getInputStream() :
+                proc.getErrorStream();
+        int c;
+
+        resultL.rows = []
+
+        while ((c = ins.read()) != -1) {
+            resultL.rows << (char) c
+//            System.out.print((char) c);
+        }
+
+        return resultL
+
+    }
+
     LinkedHashMap filter2(GrailsParameterMap params){
 
         println params

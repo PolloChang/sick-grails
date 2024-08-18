@@ -19,6 +19,15 @@ class StartController {
     }
 
     /**
+     * command injection
+     */
+    def filter3(){
+        LinkedHashMap result = ex100Service.filter3(params)
+
+        render view: "/start/filter3", model: [rows: result?.rows]
+    }
+
+    /**
      * 新增資料
      */
     def createUseDomain(){
