@@ -115,15 +115,15 @@ environments:
     development:
         dataSource:
             dbCreate: none
-            url: jdbc:postgresql://192.168.122.237:5432/devdb
+            url: jdbc:postgresql://postgresql.pollochang.local:5432/devdb
     test:
         dataSource:
             dbCreate: none
-            url: jdbc:postgresql://192.168.122.237:5432/devdb
+            url: jdbc:postgresql://postgresql.pollochang.local:5432/devdb
     production:
         dataSource:
             dbCreate: none
-            url: jdbc:postgresql://192.168.122.237:5432/devdb
+            url: jdbc:postgresql://postgresql.pollochang.local:5432/devdb
             properties:
                 jmxEnabled: true
                 initialSize: 5
