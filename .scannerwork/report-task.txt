@@ -1,0 +1,6 @@
+projectKey=sick-grails4
+serverUrl=http://192.168.100.179:9000/sonarqube
+serverVersion=10.5.1.90531
+dashboardUrl=http://192.168.100.179:9000/sonarqube/dashboard?id=sick-grails4
+ceTaskId=b16ae164-b6a1-4741-a1ba-4659fc407978
+ceTaskUrl=http://192.168.100.179:9000/sonarqube/api/ce/task?id=b16ae164-b6a1-4741-a1ba-4659fc407978
