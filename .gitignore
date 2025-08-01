@@ -11,3 +11,5 @@ out/
 .settings
 .classpath
 /.scannerwork
+codenarc.xml
+CodeNarcReport.html
